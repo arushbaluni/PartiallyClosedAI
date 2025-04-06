@@ -1,1 +1,1 @@
-worker: python main.py
+worker: python Llama_4_Scout.py
