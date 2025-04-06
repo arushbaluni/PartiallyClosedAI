@@ -7,7 +7,7 @@ Bot_token = '7451392722:AAGjG65hcDju4ZuhYzkdiYyMIIMuKuobKaI'
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",
+    api_key=api_key=os.getenv("API_KEY"),
 )
 
 # 🧠 Memory store per user
