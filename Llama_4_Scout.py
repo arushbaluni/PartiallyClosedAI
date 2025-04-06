@@ -4,7 +4,7 @@ from openai import OpenAI
 from collections import defaultdict 
 from keepalive import keep_alive
 
-Bot_token = '7451392722:AAF7z3HLytl_qcYUjwzJuh2nQkWDfb-xIhA'
+Bot_token = '7451392722:AAHXB8HmUeLnASnoT2DqaEAhdKqHo-Nodlk'
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
