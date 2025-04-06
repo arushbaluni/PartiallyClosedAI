@@ -9,7 +9,7 @@ Bot_token = os.getenv("BOT_TOKEN")
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key= os.getenv("API_KEY"),
+  api_key= os.getenv("GROQ_API_KEY"),
 )
 
 # 🧠 Memory store per user
