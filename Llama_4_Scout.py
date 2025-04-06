@@ -108,7 +108,6 @@ async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 if __name__ == "__main__":
-    keep_alive()
     app = ApplicationBuilder().token(Bot_token).build()
 
     app.add_handler(CommandHandler("start", start))
