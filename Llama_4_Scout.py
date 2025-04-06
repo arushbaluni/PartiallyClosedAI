@@ -5,11 +5,11 @@ from collections import defaultdict
 from keepalive import keep_alive
 import os
 
-Bot_token = os.getenv("BOT_TOKEN")
+Bot_token = "7451392722:AAGjG65hcDju4ZuhYzkdiYyMIIMuKuobKaI"
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key= os.getenv("GROQ_API_KEY"),
+  api_key= "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"
 )
 
 # 🧠 Memory store per user
