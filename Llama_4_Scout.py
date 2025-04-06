@@ -66,14 +66,25 @@ def get_ai_reply(user_id, input):
         }
     ] + chat_history[user_id]
 
-    completion = client.chat.completions.create(
-        model="meta-llama/llama-4-scout:free",
-        messages=messages,
-        max_tokens=300  
-    )
-    reply = completion.choices[0].message.content
+    try:
+        completion = client.chat.completions.create(
+            model="meta-llama/llama-4-scout:free",
+            messages=messages,
+            max_tokens=300  
+        )
+
+        if completion and getattr(completion, "choices", None):
+            reply = completion.choices[0].message.content
+        else:
+            reply = "❌ AI response not available. Please try again later."
+
+    except Exception as e:
+        print(f"Error in get_ai_reply: {e}")
+        reply = "⚠️ An error occurred while generating a reply."
+
     chat_history[user_id].append({"role": "assistant", "content": reply})
     return reply
+
 
 
 def logic(u_input: str ,update: Update, context: ContextTypes.DEFAULT_TYPE):
