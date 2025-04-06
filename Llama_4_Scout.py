@@ -4,11 +4,11 @@ from openai import OpenAI
 from collections import defaultdict 
 from keepalive import keep_alive
 
-Bot_token = '7451392722:AAHXB8HmUeLnASnoT2DqaEAhdKqHo-Nodlk'
+Bot_token = '7451392722:AAGjG65hcDju4ZuhYzkdiYyMIIMuKuobKaI'
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key="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",
+  api_key="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",
 )
 
 # 🧠 Memory store per user
