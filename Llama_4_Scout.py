@@ -3,12 +3,13 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 from openai import OpenAI
 from collections import defaultdict 
 from keepalive import keep_alive
+import os
 
-Bot_token = '7451392722:AAGjG65hcDju4ZuhYzkdiYyMIIMuKuobKaI'
+Bot_token = os.getenv("BOT_TOKEN")
 
 client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key="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",
+  api_key= os.getenv("API_KEY"),
 )
 
 # 🧠 Memory store per user
