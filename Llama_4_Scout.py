@@ -2,6 +2,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 from openai import OpenAI
 from collections import defaultdict
+import os
 
 Bot_token = '7451392722:AAGjG65hcDju4ZuhYzkdiYyMIIMuKuobKaI'
 
