@@ -1,16 +1,15 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
-from openai import OpenAI
+import openai 
 from collections import defaultdict 
 from keepalive import keep_alive
 import os
 
 Bot_token = "7451392722:AAGjG65hcDju4ZuhYzkdiYyMIIMuKuobKaI"
 
-client = OpenAI(
-  base_url="https://openrouter.ai/api/v1",
-  api_key= "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"
-)
+openai.api_key = "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"
+openai.base_url = "https://openrouter.ai/api/v1"
+
 
 # 🧠 Memory store per user
 
@@ -68,7 +67,7 @@ def get_ai_reply(user_id, input):
     ] + chat_history[user_id]
 
     try:
-        completion = client.chat.completions.create(
+        completion = openai.ChatCompletion.create(
             model="meta-llama/llama-4-scout:free",
             messages=messages,
             max_tokens=300  
