@@ -1,4 +1,4 @@
 python-telegram-bot
 telegram
 flask
-openai
+openai==0.28
